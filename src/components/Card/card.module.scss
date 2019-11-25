@@ -1,0 +1,60 @@
+@import './../../scss/variables';
+@import './../../scss/mixins';
+.card{
+  transition: .2s;
+  position: relative;
+  top:0;
+  &:hover{
+    top:3px;
+  }
+  label{
+    background-color:$red;
+    color:white;
+    text-transform: capitalize;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  p{
+    color: black;
+    font-size: 2rem;
+  }
+
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  label, p {
+    padding: 5px;
+  }
+
+  @include animate();
+  
+  @for $i from 1 through 5{
+    &:nth-child(#{$i}){
+      animation-delay: 100ms * $i;
+    }
+  }
+
+  min-width:10rem;
+  border-radius: 4px 4px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 4px 0 rgba(0,0,0, 0.2);
+  margin-bottom: 1rem;
+  margin-left:5px;
+  margin-right:5px;
+
+  &:last-of-type{
+    flex:1;
+  }
+  ul{
+    text-decoration: none;
+    text-align: left;
+    list-style: none;
+    margin:0;
+    padding: 1rem;
+    font-size:1.4rem;
+    overflow:auto;
+  }
+
+  max-height:9rem;
+}

@@ -1,0 +1,55 @@
+{
+  "chest": [
+    "flat barbell bench press",
+    "flat dumbell press",
+    "incline barbell bench press",
+    "incline dumbell press",
+    "cable crossover",
+    "dumbell flys, on ground"
+  ],
+  "triceps": [
+    "dips for triceps",
+    "triceps pushdown v-bar",
+    "close-grip barbell bench press",
+    "standing dumbell triceps extension",
+    "triceps pushdown rope",
+    "ez-bar skull crusher",
+    "side dumbell triceps"
+  ],
+  "back": [
+    "t-bar row",
+    "seated cable row",
+    "pullups",
+    "pull down machine",
+    "bent over barbell row",
+    "one arm dumbell row"
+  ],
+  "biceps": [
+    "dumbell curl",
+    "dumbell spider curl",
+    "dumbell hammer curl",
+    "dumbell spider curl",
+    "barbell curl",
+    "overhead cable curl"
+  ],
+  "shoulders": [
+    "overhead barbell press",
+    "dumbell overhead press",
+    "side dumbell raises",
+    "cable face pulls"
+  ],
+  "quads": [
+    "barbell front squat",
+    "dumbell squat",
+    "dumbell walking lunges",
+    "barbell walking lunges",
+    "leg press"
+  ],
+  "hamstrings": ["dumbell deadlift", "barbell deadlift", "leg curl machine"],
+  "calves": [
+    "smith machine calf raise",
+    "leg press calf raise",
+    "standing dumbell calf raise",
+    "calf press machine"
+  ]
+}

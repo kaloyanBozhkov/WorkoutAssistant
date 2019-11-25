@@ -1,0 +1,22 @@
+@import './../../scss/variables';
+@import './../../scss/mixins';
+.button{
+  background-color:white;
+  color: $red;
+  border: 2px solid $red;
+  font-weight: bold;
+  font-size: 1.4rem;
+  outline: none;
+  cursor:pointer;
+  transition: .3s;
+  @include animate();
+  animation-delay:600ms;
+  padding:1rem;
+  &:hover{
+    color: white;
+    background-color: $red;
+  }
+  &[disabled]{
+    cursor:not-allowed;
+  }
+}

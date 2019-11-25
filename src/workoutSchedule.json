@@ -1,0 +1,20 @@
+[
+  [
+    "quads,quads,calves,calves,hamstrings,hamstrings",
+    "chest,chest,triceps,triceps,shoulders",
+    "back,back,biceps,biceps",
+    "quads,quads,calves,calves,hamstrings,hamstrings",
+    null,
+    "chest,chest,triceps,triceps,shoulders",
+    "back,back,biceps,biceps,shoulders,shoulders"
+  ],
+  [
+    "quads,quads,calves,calves,hamstrings,hamstrings",
+    null,
+    "triceps,triceps,triceps,biceps,biceps,biceps",
+    "quads,quads,calves,calves,hamstrings,hamstrings",
+    null,
+    "chest,chest,chest,chest,shoulders",
+    "back,back,back,back,shoulders"
+  ]
+]

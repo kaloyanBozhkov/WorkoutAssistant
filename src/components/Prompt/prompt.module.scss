@@ -1,0 +1,108 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+.prompt{
+  position: fixed;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  background-color: rgba(0,0,0,0.2);
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index:100;
+  > div{
+    max-width:500px;
+    width:100%;
+    background-color: white;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 0 4px 0 rgba(0,0,0,0.3);
+    @include animate(jumpIn);
+    > h1 {
+      color:white;
+      background-color: $red;    
+      height: 2rem;
+      padding: 1rem;
+      margin: 0;
+      width: 100%;
+      border-radius:5px;
+      text-align: left;
+      font-size: 2rem;
+    }
+    > .prompt__main{
+      padding: 0.5rem 0 1rem 0;
+      >p{
+        text-transform: capitalize;
+        font-size:1.5rem;
+        color:white;
+        background-color:$red;
+        padding: 0.2rem; 
+        border-radius:4px;
+      }
+      flex:1;
+      > div {
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin:1rem;
+        &::before{
+          content: attr(title);
+          display:block;
+          margin-right:2rem;    
+          font-weight: bold;
+          background-color: $red;
+          color: white;
+          padding:0.2rem;
+          border-radius:3px;
+          font-size: 1.2rem;
+        }
+
+        input{
+          border:none;
+          border-bottom: 2px solid lighten($red, 25%);
+          text-align: center;
+          outline:none;
+          &:focus{
+            border-color: $red;
+          }
+        }
+
+      }
+    }
+    > .prompt__actions{
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: stretch;
+        height:3rem;
+        align-items: stretch;
+      > button{
+        border:none;
+        outline:none;
+        background:none;
+        transition:.3s;
+        cursor: pointer;
+        flex:1;
+        &:first-of-type{
+          background-color: $green;
+          color:white;
+          &:hover{
+            background-color: darken($green, 15%);
+          }
+        }
+        &:last-of-type{
+          background-color: $red;
+          color:white;
+          &:hover{
+            background-color: darken($red, 20%);
+          }
+        }
+
+      }
+    }
+  }
+}

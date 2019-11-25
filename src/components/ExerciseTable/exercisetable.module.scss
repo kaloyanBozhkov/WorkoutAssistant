@@ -1,0 +1,107 @@
+@import './../../scss/variables';
+@import './../../scss/mixins';
+.exerciseTable{
+  margin-top:3rem;
+  display:flex;
+  flex-direction: column;    
+  justify-content: stretch;
+  align-items: stretch;
+  @include animate();
+  position:relative;
+  &::before{
+    content: attr(title);
+    display:block;
+    position:absolute;
+    top:-3rem;
+    left:0;
+    font-size:1rem;
+    height:1.5rem;
+    color:white;
+    font-weight:bold;
+    background-color: $red;
+    padding:0.5rem;
+    border-radius:4px 4px 0 0;
+  }
+  
+  header, section > div{
+    display:grid;
+    grid-template-columns: 1fr repeat(5, 8rem);
+    grid-template-rows: auto;
+    > div {
+      text-align: left
+    }
+  }
+
+  header{
+    background-color: $red;
+    color:white;
+    > div {
+      font-weight:bold;
+      padding: 1rem;
+      transition: .3s;
+      &:hover{
+        background-color: darken($red, 10%);
+      }
+    }
+  }
+
+  section > div{
+    transition: .3s;
+
+    p{
+      text-transform: capitalize;
+      transition:.3s;
+    }
+    &:hover{
+      background-color: darken(white, 5%);
+      p {
+        padding-left:1.5rem;
+      }
+    }
+    > div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      &:first-of-type{
+        padding: 1rem;
+        align-items: flex-start;
+      }
+      
+      span{    
+        width: 100%;
+        background: none;
+        padding: 1rem;
+        box-sizing: border-box;
+        font-weight: bold;
+        font-size: 1.2rem;
+        overflow: auto;
+        max-height: 100%;
+      }
+    }
+  }
+
+  box-shadow: 0 0 4px 0 rgba(0,0,0,0.2);
+  width:100%;
+  min-height: 10rem;
+  > p{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    text-transform: capitalize;
+  }
+  button {
+    background:none;
+    color: black;
+    outline:none;
+    border:none;
+    cursor:pointer;
+    transition: .3s;
+    &:hover{
+      background-color: $red;
+      color:white;
+    }
+  }
+}

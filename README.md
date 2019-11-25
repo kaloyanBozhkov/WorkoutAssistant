@@ -1,2 +1,0 @@
-# WorkoutAssistant
-Created with CodeSandbox
