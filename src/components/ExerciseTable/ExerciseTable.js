@@ -37,13 +37,13 @@ const ExerciseTable = ({
         className={styles.exerciseTable}
         title={
           "Exercises Done " +
-          (new Date().toLocaleDateString() === date ? "Today" : " on " + date)
+          (new Date().toDateString() === date ? "Today" : " on " + date)
         }
       >
         {exercisesDoneToday.length === 0 && (
           <p>
             No exercises done for{" "}
-            {new Date().toDate() === date ? "today yet" : " on " + date}{" "}
+            {new Date().toDateString() === date ? "today yet" : " on " + date}{" "}
           </p>
         )}
         {exercisesDoneToday.length > 0 && (
