@@ -1,5 +1,11 @@
 @import './../../scss/variables';
 @import './../../scss/mixins';
+.exerciseTableMsgMobile{
+  @include animate();
+  animation-delay:900ms;
+  font-size:1rem;
+  color:lighten(black, 50%);
+}
 .exerciseTable{
   margin-top:3rem;
   display:flex;
@@ -7,7 +13,8 @@
   justify-content: stretch;
   align-items: stretch;
   @include animate();
-  position:relative;
+  position:relative;    
+  overflow: auto;
   &::before{
     content: attr(title);
     display:block;
@@ -22,13 +29,20 @@
     padding:0.5rem;
     border-radius:4px 4px 0 0;
   }
-  
+  header > div:last-of-type:hover{
+    background-color:$red;
+  }
+
+  header, section{
+    min-width: 60rem;
+  }
+
   header, section > div{
     display:grid;
     grid-template-columns: 1fr repeat(5, 8rem);
     grid-template-rows: auto;
     > div {
-      text-align: left
+      text-align: left;
     }
   }
 

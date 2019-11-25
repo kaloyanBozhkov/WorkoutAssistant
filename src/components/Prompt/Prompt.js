@@ -9,13 +9,6 @@ const Prompt = ({
   setExercises,
   date
 }) => {
-  //toChange exercises[date].indexOf(prompt)
-  prompt.ok = 100;
-  console.log(
-    exercises,
-    exerciseRowEdited,
-    exercises[date].indexOf(exerciseRowEdited)
-  );
   const [sets, setSets] = useState({
     name: exerciseRowEdited.name,
     set1: exerciseRowEdited.set1 === "" ? "-" : exerciseRowEdited.set1,

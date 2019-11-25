@@ -7,9 +7,9 @@ import Button from "./components/Button/Button";
 
 import exercisesData from "./exercises.json";
 import workoutSchedule from "./workoutSchedule.json";
-import "./styles.css";
+import styles from "./index.module.scss";
 
-const todayDate = new Date().toLocaleDateString();
+const todayDate = new Date().toDateString();
 
 const loadExercises = () => {
   if (!Object.prototype.hasOwnProperty.call(localStorage, "exercises")) {
@@ -103,13 +103,13 @@ const getHeaderData = ({ date: startDate }) => {
             ],
             []
           )
-          .map(item => (
-            <li>
+          .map((item, key) => (
+            <li key={key}>
               {muscleGroupsToWorkoutToday.reduce(
                 (akk, ytem) => (ytem === item.toLowerCase() ? (akk += 1) : akk),
                 0
               ) +
-                " for " +
+                " for s" +
                 item}
             </li>
           ))}
@@ -210,9 +210,10 @@ function App() {
   }, [exercises]);
 
   return (
-    <div className="App">
+    <div className={styles.app}>
+      <h1 className={styles.app__title}>Workout Assistant v1.0</h1>
       <Header headerData={headerData} />
-      <div className="buttonWrapper">
+      <div className={styles.buttonWrapper}>
         <Button
           label={
             workoutsForDay.length > 0

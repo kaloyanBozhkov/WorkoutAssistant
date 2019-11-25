@@ -18,6 +18,17 @@
     opacity: 1;
   }
 }
+
+@keyframes topIn{
+  0%{
+    transform: translateY(-200px);
+    opacity: 0;
+  }
+  100%{
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 @mixin animate($animationName: slideIn){
   @if $animationName == 'slideIn' {
     transform: translateY(100px);

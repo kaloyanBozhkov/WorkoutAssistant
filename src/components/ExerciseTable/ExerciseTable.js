@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import Prompt from "../Prompt/Prompt";
 import styles from "./exercisetable.module.scss";
@@ -9,10 +9,17 @@ const ExerciseTable = ({
   setExercises,
   exercises
 }) => {
-  console.log(exercisesDoneToday);
   const [prompt, setPrompt] = useState(false);
-  const [inputFieldValues, setInputFieldValues] = useState(null);
+  const [windowSize, setWindowSize] = useState(window.innerWidth);
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      let timer;
+      clearTimeout(timer);
+      setTimeout(() => setWindowSize(window.innerWidth), 200);
+    });
 
+    return () => window.removeEventListener("resize");
+  }, []);
   return (
     <>
       {prompt ? (
@@ -36,9 +43,7 @@ const ExerciseTable = ({
         {exercisesDoneToday.length === 0 && (
           <p>
             No exercises done for{" "}
-            {new Date().toLocaleDateString() === date
-              ? "today yet"
-              : " on " + date}{" "}
+            {new Date().toDate() === date ? "today yet" : " on " + date}{" "}
           </p>
         )}
         {exercisesDoneToday.length > 0 && (
@@ -75,6 +80,11 @@ const ExerciseTable = ({
           </>
         )}
       </div>
+      {windowSize < 800 && (
+        <p className={styles.exerciseTableMsgMobile}>
+          If on mobile, you can scroll the table left-right
+        </p>
+      )}
     </>
   );
 };
