@@ -9,6 +9,13 @@ const Prompt = ({
   setExercises,
   date
 }) => {
+  //toChange exercises[date].indexOf(prompt)
+  prompt.ok = 100;
+  console.log(
+    exercises,
+    exerciseRowEdited,
+    exercises[date].indexOf(exerciseRowEdited)
+  );
   const [sets, setSets] = useState({
     name: exerciseRowEdited.name,
     set1: exerciseRowEdited.set1 === "" ? "-" : exerciseRowEdited.set1,
@@ -23,114 +30,35 @@ const Prompt = ({
         <h1>Edit exercise sets</h1>
         <div className={styles.prompt__main}>
           <p>{exerciseRowEdited.name}</p>
-          <div title="Set 1">
-            <input
-              value={sets.set1}
-              onChange={({ target: { value } }) =>
-                setSets({
-                  ...sets,
-                  set1: value
-                })
-              }
-              onFocus={({ target: { value } }) => {
-                if (value === "-") {
+          {[...new Array(4)].map((v, i) => (
+            <div title={`Set ${i + 1}`}>
+              <input
+                value={sets[`set${i + 1}`]}
+                onChange={({ target: { value } }) =>
                   setSets({
                     ...sets,
-                    set1: ""
-                  });
+                    [`set${i + 1}`]: value
+                  })
                 }
-              }}
-              onBlur={({ target: { value } }) => {
-                if (value === "") {
-                  setSets({
-                    ...sets,
-                    set1: "-"
-                  });
-                }
-              }}
-            />
-          </div>
-          <div title="Set 2">
-            <input
-              value={sets.set2}
-              onChange={({ target: { value } }) =>
-                setSets({
-                  ...sets,
-                  set2: value
-                })
-              }
-              onFocus={({ target: { value } }) => {
-                if (value === "-") {
-                  setSets({
-                    ...sets,
-                    set2: ""
-                  });
-                }
-              }}
-              onBlur={({ target: { value } }) => {
-                if (value === "") {
-                  setSets({
-                    ...sets,
-                    set2: "-"
-                  });
-                }
-              }}
-            />
-          </div>
-          <div title="Set 3">
-            <input
-              value={sets.set3}
-              onChange={({ target: { value } }) =>
-                setSets({
-                  ...sets,
-                  set3: value
-                })
-              }
-              onFocus={({ target: { value } }) => {
-                if (value === "-") {
-                  setSets({
-                    ...sets,
-                    set3: ""
-                  });
-                }
-              }}
-              onBlur={({ target: { value } }) => {
-                if (value === "") {
-                  setSets({
-                    ...sets,
-                    set3: "-"
-                  });
-                }
-              }}
-            />
-          </div>
-          <div title="Set 4">
-            <input
-              value={sets.set4}
-              onChange={({ target: { value } }) =>
-                setSets({
-                  ...sets,
-                  set4: value
-                })
-              }
-              onFocus={({ target: { value } }) => {
-                if (value === "-") {
-                  setSets({
-                    ...sets,
-                    set4: ""
-                  });
-                }
-              }}
-              onBlur={({ target: { value } }) => {
-                if (value === "") {
-                  setSets({
-                    ...sets,
-                    set4: "-"
-                  });
-                }
-              }}
-            />
-          </div>
+                onFocus={({ target: { value } }) => {
+                  if (value === "-") {
+                    setSets({
+                      ...sets,
+                      [`set${i + 1}`]: ""
+                    });
+                  }
+                }}
+                onBlur={({ target: { value } }) => {
+                  if (value === "") {
+                    setSets({
+                      ...sets,
+                      [`set${i + 1}`]: "-"
+                    });
+                  }
+                }}
+              />
+            </div>
+          ))}
         </div>
         <div className={styles.prompt__actions}>
           <button
